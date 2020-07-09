@@ -6,4 +6,5 @@ export default class CreateContactEdView extends LightningElement {
     createContact(event){
         this.recordId=event.detail.id;
     }
+    
 }
