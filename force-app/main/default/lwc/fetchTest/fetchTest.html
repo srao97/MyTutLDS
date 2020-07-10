@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="All Contact Records">
+        <lightning-input type="number" label="Number of Contact Records to Retrieve" onchange={numberOfChange}></lightning-input>
+    </br>
+    <lightning-button label="Get Contacts" onclick={getContact} variant="brand"></lightning-button>
+        <ul>
+            <template if:true={responseReceived}>
+                <template for:each={contacts.data} for:item="contact">
+                    <li key={contact.id}>
+                        <div class="slds-p-around_medium lgc-bg">
+                            <lightning-tile label={contact.LastName}>
+                                <p class="slds-truncate" title={contact.Phone}>{contact.Phone}</p>
+                            </lightning-tile>
+                        </div>
+                    </li>
+                </template>
+            </template>
+        </ul>
+    </lightning-card>   
+</template>
